@@ -5,6 +5,7 @@ import { generate } from '../utils/fireworks'; // Adjust the import path as nece
 @Injectable()
 export class FireworksService {
   async search(query: string): Promise<any> {
+
     return generate(query);
   }
 }
