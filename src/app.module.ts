@@ -1,11 +1,10 @@
+// src/app.module.ts or the relevant module file
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { HelloController } from './hello/hello.controller';
+import { FireworksController } from './fireworks/fireworks.controller';
+import { FireworksService } from './fireworks/fireworks.service';
 
 @Module({
-  imports: [],
-  controllers: [AppController, HelloController],
-  providers: [AppService],
+  controllers: [FireworksController],
+  providers: [FireworksService],
 })
 export class AppModule {}
