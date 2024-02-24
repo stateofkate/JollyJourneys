@@ -27,6 +27,7 @@ const outputParser = new StringOutputParser();
 const mistralModel = new Fireworks({
   modelName: 'accounts/fireworks/models/mistral-8x7b-instruct',
   streaming: false,
+  fireworksApiKey: 't9K22AAfmjHKGGvEZAicgQPGKGAjQhD9lKXGjPZqiVSQsJ1p',
 });
 
 export const search_internet = async ({ query }: { query: string }) => {

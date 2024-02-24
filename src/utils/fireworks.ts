@@ -2,7 +2,7 @@ import { OpenAI } from 'openai';
 import { FunctionCall, functionCall } from './function-call';
 
 export const fireworks = new OpenAI({
-  apiKey: process.env.FIREWORKS_API_KEY!,
+  apiKey: 't9K22AAfmjHKGGvEZAicgQPGKGAjQhD9lKXGjPZqiVSQsJ1p',
   baseURL: 'https://api.fireworks.ai/inference/v1',
 });
 export const generate = async (query: string) => {

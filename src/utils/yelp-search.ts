@@ -1,5 +1,7 @@
 export const yelpSearch = async (category, location) => {
-  const apiKey = process.env.YELP_API_KEY; // Ensure you have the Yelp API key in your environment variables
+  console.log('here');
+  const apiKey =
+    'gXROn5nWrR_dNNUkWtvYsSICZPWU7CVeEGa40ovxRB903G0IpHgEOk10C-UJXBq5LSiCYNgjTbT_8_iZ90lUJT39AjBPVwxYrx3sRS24iozlo_ZCAtj6AIw3O1zaZXYx'; // Ensure you have the Yelp API key in your environment variables
   const url = `https://api.yelp.com/v3/businesses/search?term=${encodeURIComponent(category)}&location=${encodeURIComponent(location)}`;
 
   const response = await fetch(url, {
