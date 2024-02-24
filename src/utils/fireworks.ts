@@ -20,7 +20,7 @@ export const generate = async (query: string) => {
       {
         type: 'function',
         function: {
-          name: 'search_yelp',
+          name: 'search_internet',
           description:
             'Search for information about a location using the Yelp API',
           parameters: {
@@ -35,7 +35,7 @@ export const generate = async (query: string) => {
                 description: 'A category to search for',
               },
             },
-            required: ['location', 'category'],
+            required: ['query'],
           },
         },
       },
