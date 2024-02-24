@@ -31,6 +31,7 @@ const mistralModel = new Fireworks({
 });
 
 export const search_internet = async ({ query }: { query: string }) => {
+  console.log('query', query);
   const { items, links } = await tool(query);
 
   if (items.length === 0) {
