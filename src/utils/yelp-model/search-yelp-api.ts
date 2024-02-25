@@ -14,7 +14,7 @@ const yelp = async (category: string, location: string): Promise<any[]> => {
 
 const search_yelp_api = async (query: any): Promise<any[]> => {
   // Assuming query is structured as "category:location"
-  const [category, location] = query.query.split(':');
+  const { category, location } = query;
   const items = await yelp(category, location);
 
   if (items.length === 0) {

@@ -12,7 +12,7 @@ export const generate = async (query: string) => {
       {
         role: 'system',
         content:
-          'You are a helpful assistant information researcher and aggregator who can search information and format data using functions. Current year is 2024 and Your Knowledge cut off is 2021.',
+          'You are a helpful assistant information researcher and aggregator who can search information via Yelp and Google, and format data using functions. Current year is 2024 and Your Knowledge cut off is 2021.',
       },
       { role: 'user', content: query },
     ],
@@ -26,32 +26,16 @@ export const generate = async (query: string) => {
           parameters: {
             type: 'object',
             properties: {
-              query: {
+              category: {
                 type: 'string',
-                description:
-                  'A category and a location in the format "category:location"',
+                description: 'A category to search for via the Yelp API',
+              },
+              location: {
+                type: 'string',
+                description: 'A location to search for via the Yelp API',
               },
             },
-            required: ['query'],
-          },
-        },
-      },
-      {
-        type: 'function',
-        function: {
-          name: 'search_reddit_on_google',
-          description:
-            'Search information on reddit.com using the google search API. ',
-          parameters: {
-            type: 'object',
-            properties: {
-              query: {
-                type: 'string',
-                description:
-                  'A category and a location in the format "category:location"',
-              },
-            },
-            required: ['query'],
+            required: ['category', 'location'],
           },
         },
       },

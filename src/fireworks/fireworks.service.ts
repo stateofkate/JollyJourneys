@@ -1,6 +1,6 @@
 // src/fireworks/fireworks.service.ts
 import { Injectable } from '@nestjs/common';
-import { generate } from '../utils/fireworks'; // Adjust the import path as necessary
+import { generate } from '../utils/yelp-model/fireworks'; // Adjust the import path as necessary
 
 @Injectable()
 export class FireworksService {
