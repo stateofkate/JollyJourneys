@@ -62,7 +62,7 @@ const searchReddit = async (category: string, location: string): Promise<any[]> 
 
 export const searchRedditResponse = (redditJsonData: RedditPost[]) => {
   for (const URL of redditJsonData) {
-    this.accessUrlAndReadObject(URL.redditLink)
+    const redditJsonContent = accessUrlAndReadObject(URL.redditLink)
   }
 }
 
