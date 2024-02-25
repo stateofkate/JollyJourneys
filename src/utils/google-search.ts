@@ -60,9 +60,9 @@ const searchReddit = async (category: string, location: string): Promise<any[]> 
 };
 
 
-export const searchRedditResponse = (redditJsonData: RedditPost[]) => {
+export const searchRedditResponse = async (redditJsonData: RedditPost[]) => {
   for (const URL of redditJsonData) {
-    const redditJsonContent = accessUrlAndReadObject(URL.redditLink)
+    const redditJsonContent = await accessUrlAndReadObject(URL.redditLink)
     const parsedData = redditJsonContent.flatMap(listing =>
         listing.data.children.flatMap(child =>
             child.data.replies ? child.data.replies.data.children.map(reply => ({
@@ -73,6 +73,7 @@ export const searchRedditResponse = (redditJsonData: RedditPost[]) => {
         )
     );
 
+    return parsedData;
     console.log(parsedData);
   }
 }
