@@ -63,6 +63,17 @@ const searchReddit = async (category: string, location: string): Promise<any[]> 
 export const searchRedditResponse = (redditJsonData: RedditPost[]) => {
   for (const URL of redditJsonData) {
     const redditJsonContent = accessUrlAndReadObject(URL.redditLink)
+    const parsedData = redditJsonContent.flatMap(listing =>
+        listing.data.children.flatMap(child =>
+            child.data.replies ? child.data.replies.data.children.map(reply => ({
+              body: reply.data.body,
+              ups: reply.data.ups,
+              downs: reply.data.downs // Assuming 'downs' is a field; it's not present in the provided JSON
+            })) : []
+        )
+    );
+
+    console.log(parsedData);
   }
 }
 
